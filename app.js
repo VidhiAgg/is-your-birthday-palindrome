@@ -19,8 +19,8 @@ function clickHandler() {
         } else {
             var [FwdNumberOfDays, nextDate] = getNextPalindromeDate(date);
             var [backNumberOfDays, previousDate] = getPreviousPalindromeDate(date);
-
-            output.innerText = (FwdNumberOfDays < backNumberOfDays) ? `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, and is ahead by ${FwdNumberOfDays}. ` : `The nearest palindrome date was ${previousDate.day}-${previousDate.month}-${previousDate.year}, you missed that by ${backNumberOfDays}. `;
+            var daySetter = ((FwdNumberOfDays <=1) ||(backNumberOfDays <= 1)) ? ' day' : ' days';
+            output.innerText = (FwdNumberOfDays < backNumberOfDays) ? `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, and is ahead by ${FwdNumberOfDays} ${daySetter}. ` : `The nearest palindrome date was ${previousDate.day}-${previousDate.month}-${previousDate.year}, you missed that by ${backNumberOfDays} ${daySetter}. `;
         }
     }
 }

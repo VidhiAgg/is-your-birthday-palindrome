@@ -1,0 +1,29 @@
+:root{
+    --bg-color : #E6E6FA;
+    --second-color : #1d1160;
+    --temp-color : rgba(252,126,47,.6);;
+}
+
+body{
+    background-color: var(--bg-color);
+    text-align: center;
+}
+.conatiner-main{
+    width: 310px;
+    background-color: var(--second-color);
+    height: 475px;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius :12px;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.secondary-container{
+    background-color: var(--temp-color);
+   height:  455px;
+   width: 300px;
+   margin: 10px;
+   border-radius: 10px 1px 1px 10px;
+flex-grow: 3;
+}
