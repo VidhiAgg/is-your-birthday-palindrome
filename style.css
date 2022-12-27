@@ -15,7 +15,7 @@ body{
     color: #452c63;
     font-weight: bolder;
     font-size: 2.5rem;
-    
+    margin-bottom: 2rem;
 }
 
 .main-container{
@@ -49,7 +49,7 @@ img{
   width: 15rem;
   margin: auto;
     position: fixed;
-    margin-top: -4rem;
+    margin-top: -3rem;
 }
  .showResult:hover{
 	width: 20rem;
