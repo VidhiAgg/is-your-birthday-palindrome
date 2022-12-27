@@ -1,29 +1,88 @@
 :root{
-    --bg-color : #E6E6FA;
-    --second-color : #1d1160;
-    --temp-color : rgba(252,126,47,.6);;
+    --bg-color : #eeeeff;
+    --second-color : #eeeeff;
+    --temp-color :#662d91;
+     /* rgba(252,126,47,.6); */
 }
-
+/* #1d1160; */
 body{
     background-color: var(--bg-color);
     text-align: center;
+    font-family: 'Pacifico', cursive;
+    color: #452c63;
 }
-.conatiner-main{
-    width: 310px;
-    background-color: var(--second-color);
-    height: 475px;
-    margin-left: 15%;
-    margin-right: 15%;
-    border-radius :12px;
-    width: 70%;
-    display: flex;
-    flex-wrap: wrap;
+.main-heading{
+    color: #452c63;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    
 }
-.secondary-container{
-    background-color: var(--temp-color);
-   height:  455px;
-   width: 300px;
-   margin: 10px;
-   border-radius: 10px 1px 1px 10px;
-flex-grow: 3;
+
+.main-container{
+    display: inline-block;
+}
+.bday-input{
+    width: 10rem;
+    line-height: 1.3rem;
+    margin: auto;
+    position: fixed;
+    margin-left: -17rem;
+    padding: 2rem;
+    outline: none;
+    border: 0;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid #6d6d6d;
+    font-size: 1.3rem;
+    color: #452c63;
+    font-weight: 600;
+  
+    
+}
+.bday-input:focus{
+
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid #452c63;
+    transition: 0.4s;
+}
+img{
+  width: 15rem;
+  margin: auto;
+    position: fixed;
+    margin-top: -4rem;
+}
+ .showResult:hover{
+	width: 20rem;
+  
+}
+
+.result-container{
+    margin-top:15rem;
+}
+
+.error{
+    display: none;
+    margin-top:15rem;
+    background-color: red;
+    color: #eeeeff;
+    width: 80%;
+    padding: 0.5rem;
+    margin: auto;
+    font-weight: bold;
+
+}
+
+#output{
+    margin-top:25rem;
+    color: white;
+    width: 80%;
+    padding: 1rem;
+    margin: auto;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+}
+#output:hover{
+    padding: 1.2rem;
+    font-weight: 800;
 }

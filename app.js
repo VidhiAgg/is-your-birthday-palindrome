@@ -1,8 +1,11 @@
-var dateInput = document.querySelector("#bday-input");
-var submitButton = document.querySelector("#showResult");
+var dateInput = document.querySelector(".bday-input");
+var submitButton = document.querySelector(".showResult");
 var output = document.querySelector("#output");
-
+var errorOutput = document.querySelector(".error");
+output.style.display="none";
 function clickHandler() {
+    errorOutput.style.display = "none";
+
     var dateInputStr = dateInput.value;
     if (dateInputStr !== '') {
         var date_list = dateInputStr.split('-');
@@ -15,13 +18,31 @@ function clickHandler() {
         console.log(date);
         var isInputDatePalindrome = checkPalindromeForDateVariation(date);
         if (isInputDatePalindrome) {
-            output.innerText = "Its Palindrome!"
+            output.style.display="block";
+            output.style.color="red";
+            output.style.backgroundColor="#FFFF00";
+            output.innerText = "🎈🎈Yayy! Your 🎈birthdate🎈 is palindrom 😍🤩🎈🎈";
         } else {
+            output.style.display="block";
+           
             var [FwdNumberOfDays, nextDate] = getNextPalindromeDate(date);
             var [backNumberOfDays, previousDate] = getPreviousPalindromeDate(date);
             var daySetter = ((FwdNumberOfDays <=1) ||(backNumberOfDays <= 1)) ? ' day' : ' days';
-            output.innerText = (FwdNumberOfDays < backNumberOfDays) ? `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, and is ahead by ${FwdNumberOfDays} ${daySetter}. ` : `The nearest palindrome date was ${previousDate.day}-${previousDate.month}-${previousDate.year}, you missed that by ${backNumberOfDays} ${daySetter}. `;
+            // output.innerText = (FwdNumberOfDays < backNumberOfDays) ? `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, 
+            // and is ahead by ${FwdNumberOfDays} ${daySetter}. ` : `The nearest palindrome date was ${previousDate.day}-${previousDate.month}-${previousDate.year}, 
+            // you missed that by ${backNumberOfDays} ${daySetter}. `;
+            if(FwdNumberOfDays < backNumberOfDays){
+                output.style.backgroundColor="#452c63";
+                output.innerText = `🎈🎈The nearest palindrome date is🎈🎈${nextDate.day}-${nextDate.month}-${nextDate.year}, and is ahead by ${FwdNumberOfDays} ${daySetter}.😎😀😎`;
+            }else{
+                output.style.backgroundColor="#B31B1B";
+                output.innerText = `🎈🎈The nearest palindrome date was🎈🎈${previousDate.day}-${previousDate.month}-${previousDate.year}, you missed that by ${backNumberOfDays} ${daySetter}.🙃🙃 `
+            }
         }
+    }else{
+        errorOutput.style.display = "block";
+        errorOutput.innerText = " Please enter your birthdate date!😁"
+        
     }
 }
 

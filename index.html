@@ -9,11 +9,17 @@
 </head>
 <body>
 
-    <h1>Palindrome Birthday!</h1>
- <div class= "conatiner-main">
-    <div class= "secondary-container">
-        <input type="date" id="bday-input">
-        <button id="showResult">Find Out!</button>
+    <h1 class="main-heading">Palindrome Birthday!</h1>
+ <div class="main-container">
+    <input type="text" class="bday-input" placeholder="Date"
+     onblur="(this.type='text')"
+     onfocus="(this.type='date')"/>
+        <img class= "showResult"src="https://thumbs.gfycat.com/ForsakenValidGiraffe-size_restricted.gif" alt="click me">
+        <!-- <button class="showResult">btn</button> -->
+    </div>
+       
+    <div class="result-container">
+        <p class="error"></p>
         <p id="output"></p>
     </div>
    </div>
